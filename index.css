@@ -1,0 +1,45 @@
+body {
+	background-image: url('wavegrid.png');
+	background-repeat: repeat;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 50%;
+	margin: 0 auto;
+}
+
+#main {
+	text-align: center;
+	max-width: 90%;
+	margin: 6% auto;
+}
+
+#main p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 130%;
+	line-height: 1.4;
+	color: #0b1824;
+}
+
+#box {
+	text-align: center;
+	margin: 5% auto;
+	max-width: 25%;
+}
+
+#box h1 {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 120%;
+	color: #0b1824;
+    padding: 10px;
+	background-color: #d8d5a8;
+	border-radius:6px;
+}
+
+#image {
+	margin: 6% 0 0 10%;
+	width: 100%;
+	height: auto;
+}
