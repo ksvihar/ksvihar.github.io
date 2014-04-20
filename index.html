@@ -18,7 +18,7 @@
 					<li><a data-scroll data-options="easing: easeInQuad" href="#top-menu">HOME</a></li>
 					<li><a data-scroll data-options="easing: easeInQuad" href="#services-section">WHAT DO I DO</a></li>
 					<li><a data-scroll data-options="easing: easeInQuad" href="#aboutme-section">WHO AM I</a></li>
-					<li><a data-scroll data-options="easing: easeInQuad" href="#clientele-section">CLIENTELE</a></li>
+					<li><a data-scroll data-options="easing: easeInQuad" href="#portfolio-section">PORTFOLIO</a></li>
 					<li><a data-scroll data-options="easing: easeInQuad" href="#contact-section">GET IN TOUCH</a></li>
 				</ul>
 			</div>
@@ -73,16 +73,31 @@
 		</div>
 	</section>
 
-	<section id="clientele-section">
+	<section id="portfolio-section">
 		<div class="container">
-			<img src="clientele.png" class="icon">
-			<h1>CLIENTELE</h1>
-			<div class="box"><img src="engreen.jpg"></div>
-			<div class="box"><img src="martmobi.jpg"></div>
-			<div class="box"><img src="crowdit.jpg"></div>
-			<div class="box"><img src="startuplaws.jpg"></div>
-			<div class="box"><img src="carryeco.jpg"></div>
-			<div class="box"><img src="greyhunk.jpg"></div>
+			<img src="portfolio.png" class="icon">
+			<h1>PORTFOLIO</h1>
+
+			<a class="thumb"><img src="./thumb/engreen.jpg"></a>
+			<div class="large_cont"><img class="large" src="./thumb/engreen.jpg"></div>
+
+			<a class="thumb"><img src="./thumb/martmobi.jpg"></a>
+			<div class="large_cont"><img class="large" src="./thumb/martmobi.jpg"></div>
+
+			<a class="thumb"><img src="./thumb/crowdit.jpg"></a>
+			<div class="large_cont"><img class="large" src="./thumb/crowdit.jpg"></div>
+
+			<a class="thumb"><img src="./thumb/startuplaws.jpg"></a>
+			<div class="large_cont"><img class="large" src="./thumb/startuplaws.jpg"></div>
+
+			<a class="thumb"><img src="./thumb/carryeco.jpg"></a>
+			<div class="large_cont"><img class="large" src="./thumb/carryeco.jpg"></div>
+			
+			<a class="thumb"><img src="./thumb/greyhunk.jpg"></a>
+			<div class="large_cont"><img class="large" src="./thumb/greyhunk.jpg"></div>
+
+			<p id="work">And many more to follow!</p>
+
 		</div>
 
 	</section>
@@ -103,19 +118,19 @@
 							<td>
 								<form action="" method="post" class="contactform" id="mainform">
 								    <label>
-								        <input id="name" type="text" name="name" placeholder="ENTER NAME" />
+								        <input id="name" type="text" name="name" placeholder="ENTER NAME" form="mainform" />
 								    </label>
 
 								    <label>
-								        <input id="email" type="email" name="email" placeholder="ENTER EMAIL" />
+								        <input id="email" type="email" name="email" placeholder="ENTER EMAIL" form="mainform" />
 								    </label>
 
 								    <label>
-								        <textarea id="message" name="message" placeholder="YOUR MESSAGE" form="form1"></textarea>
+								        <textarea id="message" name="message" placeholder="YOUR MESSAGE" form="mainform"></textarea>
 								    </label> 
 
 								    <label>
-								        <input type="button" class="button" value="SEND" form="form1" > 
+								        <input type="button" class="button" value="SEND" form="mainform" > 
 								    </label>					       
 								</form>
 							</td>
@@ -152,6 +167,42 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="scrolltop.js"></script>
+
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script>
+	  $(document).ready(function(){
+	  var w = $(window).width();
+	  var h = $(window).height();
+	  $(".thumb").on("click",function(){
+	  	var s = $(window).scrollTop();
+	    $(".large_cont").show(); // changes div.large_cont from display:none to display:block
+	    $(".large").show();
+	    $large = $(this).find("img").attr("src").replace("thumb","large"); //replaces the url of the image from http://<something>/thumb/<something> to http://<something>/large/<something>
+	    $(".large").attr("src",$large); //assigns the enalarged images url to load it
+	    $(".large").on("load",function(){
+	    	lw = $(".large").width(); // width of div.large
+	    	lh = $(".large").height(); // height of div.large
+	    	if(lh>(h-40)){
+	    		$(".large").css({'left':((w-lw)/2),'top':(20)}); //when height of enalarged image is more than window's height
+	    	} else {
+	    		$(".large").css({'left':((w-lw)/2),'top':(20)+((h-lh)/2)}); //calculates margins and positions accordingly
+	    	}
+	    });    
+	  });
+
+		$(".large_cont").on("click",function(e){
+		     if(e.target === this){
+		       $(".large_cont").hide();
+		     }
+		   });
+		 $(document).on("keyup",function(e) {
+		    if (e.keyCode == 27) { 
+		     $(".large_cont").hide();       
+		   }
+		 });
+
+	});
+  </script>
 
 </body>
 </html>
