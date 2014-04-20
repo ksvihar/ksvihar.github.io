@@ -179,10 +179,14 @@
 	    $(".large").show();
 	    $large = $(this).find("img").attr("src").replace("thumb","large"); //replaces the url of the image from http://<something>/thumb/<something> to http://<something>/large/<something>
 	    $(".large").attr("src",$large); //assigns the enalarged images url to load it
+	    if($(".large").hasClass("loaded")){
+		     $(".large").animate({opacity:"1"});  
+		   }
 	    $(".large").on("load",function(){
 	    	lw = $(".large").width(); // width of div.large
 	    	lh = $(".large").height(); // height of div.large
 			$(".large").animate({opacity:"1"});
+			$(".large").addClass("loaded");
 	    	if(lh>(h-40)){
 	    		$(".large").css({'left':((w-lw)/2),'top':(20)}); //when height of enalarged image is more than window's height
 	    	} else {
