@@ -182,7 +182,7 @@
 	    $(".large").on("load",function(){
 	    	lw = $(".large").width(); // width of div.large
 	    	lh = $(".large").height(); // height of div.large
-	    	$(".large").css("opacity","1");
+			$(".large").animate({opacity:"1"});
 	    	if(lh>(h-40)){
 	    		$(".large").css({'left':((w-lw)/2),'top':(20)}); //when height of enalarged image is more than window's height
 	    	} else {
