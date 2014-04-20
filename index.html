@@ -182,6 +182,7 @@
 	    $(".large").on("load",function(){
 	    	lw = $(".large").width(); // width of div.large
 	    	lh = $(".large").height(); // height of div.large
+	    	$(".large").css("opacity","1");
 	    	if(lh>(h-40)){
 	    		$(".large").css({'left':((w-lw)/2),'top':(20)}); //when height of enalarged image is more than window's height
 	    	} else {
@@ -193,11 +194,13 @@
 		$(".large_cont").on("click",function(e){
 		     if(e.target === this){
 		       $(".large_cont").hide();
+		       $(".large").css("opacity","0");
 		     }
 		   });
 		 $(document).on("keyup",function(e) {
 		    if (e.keyCode == 27) { 
-		     $(".large_cont").hide();       
+		     $(".large_cont").hide();
+		     $(".large").css("opacity","0");     
 		   }
 		 });
 
