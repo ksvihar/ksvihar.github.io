@@ -48,7 +48,7 @@ a:hover {
 
 .headcontainer {
 	margin: 0 auto;
-	width: 600px;
+	width: 610px;
 }
 
 .imgcontainer {
@@ -236,7 +236,7 @@ img.icon {
 	line-height: 1.65;
 	float: 20px;
 	color: #555555;
-	margin-top: 10px;
+	margin-top: 20px;
 	font-size: 95%;
 }
 
