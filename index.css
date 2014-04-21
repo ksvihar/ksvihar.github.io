@@ -216,7 +216,7 @@ img.icon {
 #tools img {
 	float: left;
 	margin-right: 40px;
-	padding: 20px 0;
+	padding: 0 0 20px 0;
 	transition: .2s;
 	-webkit-transition: .2s;
 	-moz-transition: .2s;
@@ -236,7 +236,7 @@ img.icon {
 	text-align: justify;
 	line-height: 1.65;
 	color: #555555;
-	margin-top: 40px;
+	margin-top: 10px;
 	font-size: 95%;
 }
 
