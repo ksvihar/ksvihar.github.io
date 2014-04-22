@@ -205,7 +205,7 @@
                 e.preventDefault();
                 var s = $(window).scrollTop();
                 $(".large_cont").show(); // changes div.large_cont from display:none to display:block
-                $(".large").show();
+
 				var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
                if (is_chrome) {
                    var imgUrl = $(this).css('background-image');
@@ -221,6 +221,7 @@
                     $(".large").animate({opacity:"1"});  
                 }*/
                 $(".large").on("load",function(){
+                	$(".large").show();
                     lw = $(".large").width(); // width of div.large
                     lh = $(".large").height(); // height of div.large
                     $(".large").animate({opacity:"1"});
