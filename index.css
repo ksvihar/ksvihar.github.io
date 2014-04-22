@@ -88,6 +88,7 @@ a:hover {
 	margin: 0 auto;
 }
 
+
 /* MAIN-SECTION */
 
 #main-section {
@@ -123,6 +124,7 @@ p#headtext {
 	margin-top: 62px;
 	padding: 23px;
 }
+
 
 /* ABOUT-SECTION */
 
@@ -229,7 +231,6 @@ img.icon {
 	-webkit-transform: translate(0,-5px);
 	transform: translate(0,-5px);
 }
-
 */
 
 #tools p {
@@ -259,7 +260,6 @@ p#work {
 }
 
 /*
-
 .box {
 	width: 312px;
 	padding: 10px;
@@ -280,28 +280,27 @@ p#work {
 	-webkit-transform: translate(0,-5px); 
 	transform: translate(0,-5px);
 }
-
 */
 
 .large{
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:1002;
-  display:none;
-  opacity: 0;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:1002;
+	display:none;
+	opacity: 0;
 }
 
 .large_cont{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-z-index:1000;
-display:none;
-overflow:auto;
-background:rgba(0,0,0,0.9) url(load.gif) no-repeat center;
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index:1000;
+	display:none;
+	overflow:auto;
+	background:rgba(0,0,0,0.9) url(load.gif) no-repeat center;
 }
 
 .thumb img{
@@ -321,6 +320,32 @@ background:rgba(0,0,0,0.9) url(load.gif) no-repeat center;
 	transform: translate(0,-10px);	
 }
 
+
+/* QUOTE-SECTION */
+
+#quote-section {
+	width: 100%;
+	height: 235px;
+	margin: 0;
+	background-image: url(agsquare.png);
+	background-repeat: repeat;
+}
+
+p#quote {
+	padding: 90px 0 0 0;
+	text-align: center;
+	font-weight: 300;
+	font-size: 160%;
+	color: #555;
+}
+
+p#author {
+	padding: 10px;
+	font-style: italic;
+	font-size: 110%;
+	color: #555;
+	right: 0;
+}
 
 
 /* CONTACT-SECTION */
@@ -371,7 +396,6 @@ img.icon1 {
 
 
 /*
-
 #maintable {
 	margin: 30px 0 0 0;
 }
@@ -438,34 +462,7 @@ img.icon1 {
 .contactform .button:hover {
     background: #404040;
 }
-
 */
-
-/* QUOTE-SECTION */
-
-#quote-section {
-	width: 100%;
-	height: 235px;
-	margin: 0;
-	background-image: url(agsquare.png);
-	background-repeat: repeat;
-}
-
-p#quote {
-	padding: 90px 0 0 0;
-	text-align: center;
-	font-weight: 300;
-	font-size: 160%;
-	color: #555;
-}
-
-p#author {
-	padding: 10px;
-	font-style: italic;
-	font-size: 110%;
-	color: #555;
-	right: 0;
-}
 
 
 /* FOOTER */
@@ -510,7 +507,7 @@ footer img:hover {
 }
 
 
-
+/* SCROLL UP */
 
 .scrollup {
     width: 40px;
