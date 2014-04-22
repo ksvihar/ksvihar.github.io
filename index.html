@@ -99,7 +99,7 @@
 				</div>
 			</div>
 		    <div class="large_cont" style="display: none;">
-		        <img class="large loaded" src="./large/engreen.jpg" style="display: inline; opacity: 0;">
+		        <img class="large loaded" src="" style="display: inline; opacity: 0;">
 		    </div>
 		</div>
 	</section>
@@ -221,7 +221,6 @@
                     $(".large").animate({opacity:"1"});  
                 }*/
                 $(".large").on("load",function(){
-                    console.log("load");
                     lw = $(".large").width(); // width of div.large
                     lh = $(".large").height(); // height of div.large
                     $(".large").animate({opacity:"1"});
@@ -238,13 +237,13 @@
                 if(e.target === this){
                     $(".large_cont").hide();
                     $(".large").css("opacity","0");
-                }
+                $(".large").attr("src","");}
             });
             $(document).on("keyup",function(e) {
                 if (e.keyCode == 27) { 
                     $(".large_cont").hide();
                     $(".large").css("opacity","0");     
-                }
+                $(".large").attr("src","");}
             });
 
         });
