@@ -15,7 +15,7 @@
 	<header>
 		<nav id="top-menu">
 			<div class="headcontainer">
-				<ul>
+					<ul>
 					<li><a data-scroll data-options="easing: easeInQuad" href="#top-menu">HOME</a></li>
 					<li><a data-scroll data-options="easing: easeInQuad" href="#services-section">WHAT I DO</a></li>
 					<li><a data-scroll data-options="easing: easeInQuad" href="#aboutme-section">WHO I AM</a></li>
@@ -44,28 +44,27 @@
 			<div id="white-back">
 				<img src="paperflip.png" id="flip">
 				<img src="services.png" class="icon" id="services-section">
-				<div class="clear"></div>
 				<h1>WHAT I DO</h1>
 				<div class="service-box">
 					<img src="branding.png">
-					<div class="clear"></div>		
+					<div class="clear"></div>
 					<h2>BRANDING</h2>
 					<p>Logos, Color Palettes, <br>Complete branding</p>
 				</div>
 				<div class="service-box">
 					<img src="web.png">
-					<div class="clear"></div>		
+					<div class="clear"></div>
 					<h2>WEB DESIGN</h2>
 					<p>Websites, Blogs, Mobile <br> Application Layouts, etc.</p>
 				</div>
 				<div class="service-box">
 					<img src="print.png">
-					<div class="clear"></div>		
+					<div class="clear"></div>	
 					<h2>PRINT DESIGN</h2>
 					<p>Posters, Banners, Flyers,<br> Office etiquette, etc.</p>
 				</div>
-				<img src="aboutme.png" class="icon" id="aboutme-section">
 				<div class="clear"></div>
+				<img src="aboutme.png" class="icon" id="aboutme-section">
 				<h1>WHO I AM</h1>
 				<div id="tools">
 					<img src="tools.png">
@@ -83,19 +82,25 @@
 	<section id="portfolio-section">
 		<div class="container">
 			<img src="portfolio.png" class="icon">
-			<div class="clear"></div>
 			<h1>PORTFOLIO</h1>
  			<p id="work">Here are some of my works. More to follow!</p>
- 			<div class="large_cont"><img class="large" src="./thumb/engreen.jpg"></div> 
-            <a class="thumb"><img src="./thumb/engreen.jpg"></a>
-            <a class="thumb"><img src="./thumb/martmobi.jpg"></a>
-            <a class="thumb"><img src="./thumb/crowdit.jpg"></a>
-            <a class="thumb"><img src="./thumb/startuplaws.jpg"></a>
-            <a class="thumb"><img src="./thumb/carryeco.jpg"></a>
-            <a class="thumb"><img src="./thumb/owlgrin.jpg"></a>
-            <a class="thumb"><img src="./thumb/greyhunk.jpg"></a>
-            <a class="thumb"><img src="./thumb/ecomm.jpg"></a>
-            <a class="thumb"><img src="./thumb/mtp.jpg"></a>
+ 			<div class="clear"></div>
+ 			<div class="wrapper">
+				<div class="container1">
+					<div class="thumb tile11 center"></div>
+				    <div class="thumb tile12 center"></div>
+				    <div class="thumb tile13 center"></div>
+				    <div class="thumb tile21 center"></div>
+				    <div class="thumb tile22 center"></div>
+				    <div class="thumb tile23 center"></div>
+				    <div class="thumb tile31 center"></div>
+				    <div class="thumb tile32 center"></div>
+				    <div class="thumb tile33 center"></div>				      
+				</div>
+			</div>
+		    <div class="large_cont" style="display: none;">
+		        <img class="large loaded" src="./large/engreen.jpg" style="display: inline; opacity: 0;">
+		    </div>
 		</div>
 	</section>
 
@@ -107,7 +112,6 @@
 	<section id="contact-section">
 		<div class="container">
 			<img src="contact.png" class="icon1">
-			<div class="clear"></div>
 			<h1 style="color:#444">GET IN TOUCH</h1>
 			<div class="contact-text">
 				<p>Have a project in mind? Shoot me an email at <span style="font-weight:400;">ksvihar@gmail.com</span> and I shall get back to you asap! <br><br> Or if you have some feedback, I would be more than happy to take it.</p>
@@ -145,49 +149,99 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="scrolltop.js"></script>
 
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script>
-	  $(document).ready(function(){
-	  var w = $(window).width();
-	  var h = $(window).height();
-	  $(".thumb").on("click",function(){
-	  	var s = $(window).scrollTop();
-	    $(".large_cont").show(); // changes div.large_cont from display:none to display:block
-	    $(".large").show();
-	    $large = $(this).find("img").attr("src").replace("thumb","large"); //replaces the url of the image from http://<something>/thumb/<something> to http://<something>/large/<something>
-	    $(".large").attr("src",$large); //assigns the enalarged images url to load it
-	    if($(".large").hasClass("loaded")){
-		     $(".large").animate({opacity:"1"});  
-		   }
-	    $(".large").on("load",function(){
-	    	lw = $(".large").width(); // width of div.large
-	    	lh = $(".large").height(); // height of div.large
-			$(".large").animate({opacity:"1"});
-			$(".large").addClass("loaded");
-	    	if(lh>(h-40)){
-	    		$(".large").css({'left':((w-lw)/2),'top':(20)}); //when height of enalarged image is more than window's height
-	    	
-			} else {
-			$(".large").css({'left':((w-lw)/2),'top':((h-lh)/2)}); //calculates margins and positions accordingly
-			}
-	    });    
-	  });
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
 
-		$(".large_cont").on("click",function(e){
-		     if(e.target === this){
-		       $(".large_cont").hide();
-		       $(".large").css("opacity","0");
-		     }
-		   });
-		 $(document).on("keyup",function(e) {
-		    if (e.keyCode == 27) { 
-		     $(".large_cont").hide();
-		     $(".large").css("opacity","0");     
-		   }
-		 });
+            var getCSS = function (prop, fromClass) {
+                var $inspector = $("<div>").css('display', 'none').addClass(fromClass);
+                $("body").append($inspector);//add to DOM, in order to read the CSS property
+                try {
+                    return $inspector.css(prop);
+                } finally {
+                    $inspector.remove(); //and remove from DOM
+                }
+            };
+            var tw = Number((getCSS("width", "thumb").split("p"))[0]),
+                th = Number((getCSS("height", "thumb").split("p"))[0]),
+                cw = $(".container1").width(),
+                ch = $(".container1").height(),
+                ww = $(window).width(),
+                wh = $(window).height(),
+                om = Number(0),
+                imx = Number(30),
+                imy = Number(60),
+                cols = Math.floor(cw / tw),
+                n = $(".thumb").length,
+                row, col,
+                once = true;
+            //console.log($(document).scrollTop()+","+(700-wh));
+            setInterval(function(){
 
-	});
-  </script>
+            	if(($(document).scrollTop()>(2040-wh))&&(once == true)){              
+                    i = -2;
+                    var anim = setInterval(function () {
+                    //console.log((i>=0)&&(i < $(".thumb").length));
+                    if ((i>=0)&&(i < $(".thumb").length)) {
+                        $(".thumb").eq(i).removeClass("center");
+                        row = Math.floor(i / cols);
+                        col = Math.floor(i % cols);                            
+                        $(".thumb").eq(i).css({"top": ((row * (th+imy))+om),"left": ((col * (tw+imx))+om)});                            
+                    } else if (i<0){                            
+                    } else {
+                        clearInterval(anim);
+                    }
+                    i++;
+                }, 200);                              
+                once=false;        
+                }else{
+                    return;
+                }                        
+            },100);
+
+            //POPUP LARGE IMAGE CODE
+
+            $(".thumb").on("click",function(e){
+                e.preventDefault();
+                var s = $(window).scrollTop();
+                $(".large_cont").show(); // changes div.large_cont from display:none to display:block
+                $(".large").show();
+                var imgUrl = $(this).css('background-image');
+                    imgUrl = imgUrl.substring(4, imgUrl.length - 1);                    
+                $large = imgUrl.replace("thumb","large"); //replaces the url of the image from http://<something>/thumb/<something> to http://<something>/large/<something>
+                $(".large").attr("src",$large); //assigns the enalarged images url to load it
+                if($(".large").hasClass("loaded")){
+                    $(".large").animate({opacity:"1"});  
+                }
+                $(".large").on("load",function(){
+                    lw = $(".large").width(); // width of div.large
+                    lh = $(".large").height(); // height of div.large
+                    $(".large").animate({opacity:"1"});
+                    $(".large").addClass("loaded");
+                    if(lh>(wh-40)){
+                        $(".large").css({'left':((ww-lw)/2),'top':(20)}); //when height of enalarged image is more than window's height
+                    } else {
+                        $(".large").css({'left':((ww-lw)/2),'top':((wh-lh)/2)}); //calculates margins and positions accordingly
+                    }
+                });
+            });
+
+            $(".large_cont").on("click",function(e){
+                if(e.target === this){
+                    $(".large_cont").hide();
+                    $(".large").css("opacity","0");
+                }
+            });
+            $(document).on("keyup",function(e) {
+                if (e.keyCode == 27) { 
+                    $(".large_cont").hide();
+                    $(".large").css("opacity","0");     
+                }
+            });
+
+        });
+    </script>
+
 
 </body>
 </html>
