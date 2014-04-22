@@ -206,8 +206,15 @@
                 var s = $(window).scrollTop();
                 $(".large_cont").show(); // changes div.large_cont from display:none to display:block
                 $(".large").show();
-                var imgUrl = $(this).css('background-image');
-                    imgUrl = imgUrl.substring(4, imgUrl.length - 1);                    
+				var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+               if (is_chrome) {
+                   var imgUrl = $(this).css('background-image');
+                   imgUrl = imgUrl.substring(4, imgUrl.length - 1);
+               }
+               else{
+                   var imgUrl = $(this).css('background-image');
+                   imgUrl = imgUrl.substring(5, imgUrl.length - 2);
+               }                   
                 $large = imgUrl.replace("thumb","large"); //replaces the url of the image from http://<something>/thumb/<something> to http://<something>/large/<something>
                 $(".large").attr("src",$large); //assigns the enalarged images url to load it
                 if($(".large").hasClass("loaded")){
