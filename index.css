@@ -105,8 +105,8 @@ a:hover {
 	margin: 120px auto 130px;
 	transition: .4s;
 	-webkit-transition: .4s;
-	-moz-transition: .2s;
-    -o-transition: .2s;
+	-moz-transition: .s;
+    -o-transition: .4s;
 }
 
 #main-image:hover {
@@ -501,9 +501,9 @@ footer img {
 }
 
 footer img:hover {
-	-ms-transform: translate(0,-2px); /* IE 9 */
-	-webkit-transform: translate(0,-2px); /* Chrome, Safari, Opera */
-	transform: translate(0,-2px);
+	-ms-transform: translate(0,-4px); /* IE 9 */
+	-webkit-transform: translate(0,-4px); /* Chrome, Safari, Opera */
+	transform: translate(0,-4px);
 }
 
 
